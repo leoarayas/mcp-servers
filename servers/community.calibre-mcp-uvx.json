@@ -1,6 +1,6 @@
 {
   "$schema": "../schemas/server-definition.schema.json",
-  "id": "sandraschi.calibremcp-uvx",
+  "id": "community.calibre-mcp-uvx",
   "name": "Calibre (uvx)",
   "alias": "calibre",
   "description": "Manage, search, and maintain your local Calibre e-book library through natural language. Search titles and metadata, query content via semantic search, and manage books and shelves.",
@@ -23,7 +23,9 @@
     "type": "stdio",
     "command": "uvx",
     "args": [
-      "calibremcp"
+      "--from",
+      "git+https://github.com/sandraschi/calibremcp@v1.9.0",
+      "schip-mcp-calibre"
     ],
     "env": {
       "CALIBRE_LIBRARY_PATH": "${input:CALIBRE_LIBRARY_PATH}"
