@@ -1,0 +1,68 @@
+{
+  "$schema": "../schemas/server-definition.schema.json",
+  "id": "sandraschi.calibremcp-uvx",
+  "name": "Calibre (uvx)",
+  "alias": "calibre",
+  "description": "Manage, search, and maintain your local Calibre e-book library through natural language. Search titles and metadata, query content via semantic search, and manage books and shelves.",
+  "logo": "https://avatars.githubusercontent.com/u/34750307?v=4",
+  "schema_version": "2.1",
+  "categories": [
+    "productivity",
+    "file-system"
+  ],
+  "tags": [
+    "calibre",
+    "ebooks",
+    "books",
+    "library",
+    "reader",
+    "metadata",
+    "rag"
+  ],
+  "transport": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "calibremcp"
+    ],
+    "env": {
+      "CALIBRE_LIBRARY_PATH": "${input:CALIBRE_LIBRARY_PATH}"
+    },
+    "metadata": {
+      "inputs": [
+        {
+          "id": "CALIBRE_LIBRARY_PATH",
+          "label": "Calibre Library Path",
+          "description": "Absolute path to your Calibre library directory (containing metadata.db).",
+          "type": "directory_path",
+          "required": true,
+          "secret": false,
+          "placeholder": "C:\\Users\\you\\Calibre Library"
+        }
+      ]
+    }
+  },
+  "auth": {
+    "type": "none",
+    "instructions": "No external authentication required. Reads and manages your local Calibre library directly from the configured directory."
+  },
+  "contributor": {
+    "name": "Sandra Schipal",
+    "github": "sandraschi",
+    "url": "https://github.com/sandraschi/calibremcp"
+  },
+  "links": {
+    "repository": "https://github.com/sandraschi/calibremcp",
+    "homepage": "https://github.com/sandraschi/calibremcp",
+    "documentation": "https://github.com/sandraschi/calibremcp#readme"
+  },
+  "platforms": [
+    "all"
+  ],
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false,
+    "read_only_mode": false
+  }
+}
