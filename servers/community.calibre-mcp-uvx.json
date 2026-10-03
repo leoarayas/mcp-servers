@@ -35,11 +35,11 @@
         {
           "id": "CALIBRE_LIBRARY_PATH",
           "label": "Calibre Library Path",
-          "description": "Absolute path to your Calibre library directory (containing metadata.db).",
+          "description": "Absolute path to your Calibre library directory (the folder containing metadata.db). If Calibre desktop already has a current library configured, CalibreMCP prefers that one, so point this at the same library.",
           "type": "directory_path",
           "required": true,
           "secret": false,
-          "placeholder": "C:\\Users\\you\\Calibre Library"
+          "placeholder": "/path/to/Calibre Library"
         }
       ]
     }
@@ -49,9 +49,9 @@
     "instructions": "No external authentication required. Reads and manages your local Calibre library directly from the configured directory."
   },
   "contributor": {
-    "name": "Sandra Schipal",
-    "github": "sandraschi",
-    "url": "https://github.com/sandraschi/calibremcp"
+    "name": "Leo Araya Svensson",
+    "github": "leoarayas",
+    "url": "https://github.com/leoarayas"
   },
   "links": {
     "repository": "https://github.com/sandraschi/calibremcp",
@@ -64,7 +64,7 @@
   "capabilities": {
     "tools": true,
     "resources": true,
-    "prompts": false,
+    "prompts": true,
     "read_only_mode": false
   }
 }
